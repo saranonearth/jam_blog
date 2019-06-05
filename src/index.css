@@ -1,20 +1,22 @@
-
+html{
+    width: 100%;
+}
 .jam-heading {
     font-size: 3.4em !important; 
     width: 70% !important;
 }
 .nav-item{
     color: rgb(0,0,0,0.5);
-    padding: 25px;
+    padding: 15px;
     font-weight: 400;
 }
-
 .thumb-link:hover{
     background: transparent !important;
 }
 .nav-item:hover{
     color: black;
     cursor: pointer;
+    
 }
 .nav-content {
     font-size: 14px;
@@ -32,7 +34,7 @@ i:hover {
 
 @media (max-width:800px){
     .jam-heading{
-        width: 80% !important;
+        width: 67% !important;
         font-size: 2em !important;
         line-height: 100%;
     }
@@ -58,6 +60,21 @@ i:hover {
     .user-name{
         display: none;
     }
+
+    /* Profile */
+
+    .profile-nav-title{
+        text-align: center !important;
+    }
     
+    
+}
+
+@media (min-width:992px) {
+    .mobile-profile-nav{
+        
+        display:none;
+    }
+  
 }
 
