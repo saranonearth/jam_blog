@@ -9,11 +9,11 @@ const Navbar = () => {
                 <div  className="nav-length nav-wrapper">
                
                 <NavLink to="/" 
-                style={{fontSize: '5em', fontFamily: 'Libre Baskerville', marginTop:'20px'}} 
+                style={{fontSize: '5em', fontFamily: 'Abril Fatface', marginTop:'20px'}} 
                 className="brand-logo center jam-heading black-text flow-text">Just Another Magazine</NavLink>
                 <ul className="right">
                     <li>
-                    <Link to={"/profile/"+`${username}`}  className="thumb-link"><i className="material-icons grey-text ">account_circle</i></Link>
+                    <Link to={`profile/${username}`}  className="thumb-link"><i className="material-icons grey-text ">account_circle</i></Link>
                     </li>
             
                 </ul>

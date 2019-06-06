@@ -9,8 +9,8 @@ const ProfileNavbar = (props) => {
                 <span className="left profile-nav-title" style={{fontWeight:'400',paddingLeft:'10px',fontSize:'2em'}}>Hey! Saran</span>
                 <ul  className="right hide-on-med-and-down" >
                 <li><NavLink to={props.url}>About</NavLink></li>
-               <li ><NavLink to={`${props.url}`+"/articles"}>Your Articles</NavLink></li>
-                <li style={{paddingRight:'20px'}}><Link to={`${props.url}`+"/newarticle"}><button className="waves-effect waves-light btn black-text white">New Article</button></Link></li>
+               <li ><NavLink to={`${props.url}/articles`}>Your Articles</NavLink></li>
+                <li style={{paddingRight:'20px'}}><Link to={`${props.url}/newarticle`}><button className="waves-effect waves-light btn black-text white">New Article</button></Link></li>
                 </ul>
                 </div>
             </nav>
@@ -18,8 +18,8 @@ const ProfileNavbar = (props) => {
                 <div className="nav-wrapper black">
                <div className="profile-nav-items"> <ul >
                <li><NavLink to={props.url}>About</NavLink></li>
-               <li ><NavLink to={`${props.url}`+"/articles"}>Your Articles</NavLink></li>
-                <li><Link to={`${props.url}`+"/newarticle"}><button className="waves-effect waves-light btn black-text white">New Article</button></Link></li>
+               <li ><NavLink to={`${props.url}/articles`}>Your Articles</NavLink></li>
+                <li><Link to={`${props.url}/newarticle`}><button style={{paddingLeft:'10px',paddingRight:'10px'}} className="waves-effect waves-light btn black-text white">New Article</button></Link></li>
                 </ul></div>
                 </div>
             </nav>

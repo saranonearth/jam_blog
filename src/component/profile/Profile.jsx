@@ -18,8 +18,8 @@ const Profile = (props) => {
             <ProfileNavbar url={url}/>
             <Switch>
             <Route exact path="/profile/:username" component={About} />
-            <Route path={`${url}`+'/articles'} component={Articles} />
-            <Route path={`${url}`+'/newarticle'} component={NewArticle} />
+            <Route path={`${url}/articles`} component={Articles} />
+            <Route path={`${url}/newarticle`} component={NewArticle} />
             <Route component={Err}/>
             </Switch>
             </div>

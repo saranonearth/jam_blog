@@ -2,7 +2,7 @@ html{
     width: 100%;
 }
 .jam-heading {
-    font-size: 3.4em !important; 
+    font-size: 4.5vw !important; 
     width: 70% !important;
 }
 .nav-item{
@@ -32,10 +32,28 @@ i:hover {
     cursor: pointer;
 }
 
+.card{
+    border-radius: 20px;
+    height:60vh;
+}
+.profile-image{
+    margin: 20px;
+    border-radius: 100%;
+    width:200px;
+    height:200px;
+    
+}
+.signup-text{
+    font-weight: 600;
+}
+input {
+    width: 50% !important;
+}
+
 @media (max-width:800px){
     .jam-heading{
         width: 67% !important;
-        font-size: 2em !important;
+        font-size: 2.2em !important;
         line-height: 100%;
     }
     .nav-length{
@@ -52,22 +70,51 @@ i:hover {
     .nav-item{
        font-weight: 400;
        padding: 14px;
+       font-size:13px;
     }
     i{
         font-size: 2em !important;
         
     }
-    .user-name{
-        display: none;
-    }
+
 
     /* Profile */
 
     .profile-nav-title{
         text-align: center !important;
     }
-    
-    
+    .profile-image{
+        margin: 20px;
+        border-radius: 100%;
+        width:110px;
+        height:110px;
+        
+    }
+    .about-card{
+        margin-top: 6px !important;
+        border-radius: 20px;
+        height:55vh;
+        font-size: 12px;
+    }
+    .cred-card{
+        width: 90% !important;
+        position: absolute;
+        left: 5% !important;
+    }
+    .card-length{
+        height: 62vh;
+    }
+    .signup-text{
+        font-size: 14px;
+    }
+    .card-length-signup{
+        height: 68vh !important;
+    }
+    .signup-txt{
+        padding-top: 26px !important;
+        padding-bottom: 10px !important;
+    }
+   
 }
 
 @media (min-width:992px) {
