@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './component/layout/Navbar';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
-import Blog from './component/layout/Blog';
+import Blog from './component/blog/Blog';
 import Err from './component/layout/Error';
 import Contributors from './component/layout/Contributors';
 import Profile from './component/profile/Profile';

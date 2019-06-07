@@ -5,7 +5,7 @@ export class Signup extends Component {
         return (
             <div>
             <div className="container cred-card" style={{width:'50%',position:'absolute',left:'25%'}}>
-                <div className="card about-card card-length-signup" style={{marginTop:'30px'}}>
+                <div className="card yo-card about-card card-length-signup" style={{marginTop:'30px'}}>
                     <div className="card-contents">
                     <div className="container ">
                     <div className="cred-card-align">

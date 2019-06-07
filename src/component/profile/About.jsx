@@ -6,7 +6,7 @@ const About = (props) => {
     return (
         <div>
             <div className="container" >
-                <div className="card about-card center" style={{marginTop:'30px'}}>
+                <div className="card yo-card about-card center" style={{marginTop:'30px'}}>
                     <div className="card-contents">
                     <div className="container">
                     <img  className="profile-image" src={profileImg} alt="profile-img"/>
