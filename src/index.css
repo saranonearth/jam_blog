@@ -87,6 +87,10 @@ i:hover {
 .blog-sidebar{
     margin-top: 75px;
 }
+.contri-section {
+    width:80%;
+    margin: 0 auto;
+}
 @media (max-width:800px){
     .jam-heading{
         width: 67% !important;
@@ -140,7 +144,7 @@ i:hover {
         left: 5% !important;
     }
     .card-length{
-        height: 62vh;
+        height: 50vh;
     }
     .signup-text{
         font-size: 14px;
@@ -175,6 +179,10 @@ i:hover {
     }
     .blog-sidebar{
         margin-top: 20px;
+    }
+    .contri-section {
+        width:55%;
+        margin: 0 auto;
     }
 
 }

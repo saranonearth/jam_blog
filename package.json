@@ -4,11 +4,16 @@
   "private": true,
   "dependencies": {
     "@trendmicro/react-sidenav": "^0.4.5",
+    "firebase": "^6.1.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-redux-firestore": "0.0.1",
     "react-responsive-carousel": "^3.1.49",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.1",
+    "redux-firestore": "^0.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
