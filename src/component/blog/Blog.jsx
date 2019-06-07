@@ -1,5 +1,6 @@
 import React from 'react'
 import BlogListContent from './BlogListContent';
+import Jam from './Jam';
 
 const Blog = () => {
     return (
@@ -19,7 +20,8 @@ const Blog = () => {
                     <BlogListContent />          
             </div>
 
-            <div className="col s12 l5">
+            <div className="col s12 l5 blog-sidebar">
+            <Jam/>
                 </div>
              
             </div>

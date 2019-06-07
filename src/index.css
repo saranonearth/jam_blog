@@ -36,6 +36,10 @@ i:hover {
     border-radius: 20px;
     height:60vh;
 }
+.newarticle-card{
+    border-radius: 20px;
+    height:auto;
+}   
 .profile-image{
     margin: 20px;
     border-radius: 100%;
@@ -46,7 +50,7 @@ i:hover {
 .signup-text{
     font-weight: 600;
 }
-input {
+.auth-input {
     width: 50% !important;
 }
 .blog-card{
@@ -75,6 +79,13 @@ input {
 }
 .jam-title{
     text-align: center !important;
+}
+.cont {
+    width: 80%;
+    margin: 0 auto;
+}
+.blog-sidebar{
+    margin-top: 75px;
 }
 @media (max-width:800px){
     .jam-heading{
@@ -161,6 +172,9 @@ input {
     }
     .header-img{
         height:30vh;
+    }
+    .blog-sidebar{
+        margin-top: 20px;
     }
 
 }

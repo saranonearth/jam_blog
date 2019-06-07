@@ -12,15 +12,15 @@ export class Signup extends Component {
                     <h4 className="signup-txt" style={{fontFamily:'Abril Fatface',paddingTop:'50px',paddingBottom:'10px'}}>Signup.</h4>
                         <form >
                         <div class="input-field col s12">
-                            <input id="username" type="text" />
+                            <input className="auth-input" id="username" type="text" />
                             <label for="username">Username</label>
                         </div>
                         <div class="input-field col s12">
-                            <input id="email" type="email" class="validate"/>
+                            <input className="auth-input" id="email" type="email" class="validate"/>
                             <label for="email">Email</label>
                         </div>  
                           <div class="input-field col s12">
-                            <input id="password" type="password" class="validate"/>
+                            <input className="auth-input" id="password" type="password" class="validate"/>
                             <label for="password">Password</label>
                           </div>
                           <button style={{marginBottom:'20px'}}type="submit" className="black btn waves-effect waves-light">Signup</button>

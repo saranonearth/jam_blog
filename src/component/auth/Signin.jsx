@@ -12,11 +12,11 @@ export class Signin extends Component {
                     <h4 style={{fontFamily:'Abril Fatface',paddingTop:'50px',paddingBottom:'10px'}}>Signin.</h4>
                         <form >
                         <div class="input-field col s12">
-                            <input id="email" type="email" class="validate"/>
+                            <input className="auth-input" id="email" type="email" class="validate"/>
                             <label for="email">Email</label>
                         </div>  
                           <div class="input-field col s12">
-                            <input id="password" type="password" class="validate"/>
+                            <input className="auth-input" id="password" type="password" class="validate"/>
                             <label for="password">Password</label>
                           </div>
                           <button style={{marginBottom:'20px'}}type="submit" className="black btn waves-effect waves-light">Signin</button>
