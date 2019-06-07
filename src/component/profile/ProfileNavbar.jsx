@@ -1,12 +1,15 @@
 import React from 'react'
-import {NavLink,Link} from 'react-router-dom';
+import {NavLink,Link,Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {logOut} from '../../actions/authAction';
+
 const ProfileNavbar = (props) => {
     
     return (
         <div>
             <nav>
                 <div className="nav-wrapper black">
-                <span className="left profile-nav-title" style={{fontWeight:'400',paddingLeft:'10px',fontSize:'2em'}}>Hey! Saran</span>
+                <span><span className="left profile-nav-title" style={{fontWeight:'400',paddingLeft:'10px',fontSize:'2em'}}>Hey! Saran</span> {(props.auth.uid)? <button onClick={()=>props.logout(props.logout)} className="logout-btn btn black-text white">Logout</button>:null}</span>
                 <ul  className="right hide-on-med-and-down" >
                 <li><NavLink to={props.url}>About</NavLink></li>
                <li ><NavLink to={`${props.url}/articles`}>Your Articles</NavLink></li>
@@ -28,4 +31,14 @@ const ProfileNavbar = (props) => {
     )
 }
 
-export default ProfileNavbar
+const mapStatetoProps=(state)=>{
+    return{
+        auth: state.firebase.auth
+    }
+}
+const mapDispatchtoProps=(dispatch)=>{
+        return{
+            logout: ()=>{dispatch(logOut())}
+        }
+}
+export default connect(mapStatetoProps,mapDispatchtoProps)(ProfileNavbar)

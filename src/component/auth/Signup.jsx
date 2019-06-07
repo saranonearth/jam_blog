@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
+import {Link,Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
 
 export class Signup extends Component {
     render() {
+        if(this.props.auth.uid) return <Redirect to="/profile/saran"/>
         return (
             <div>
             <div className="container cred-card" style={{width:'50%',position:'absolute',left:'25%'}}>
@@ -11,22 +14,22 @@ export class Signup extends Component {
                     <div className="cred-card-align">
                     <h4 className="signup-txt" style={{fontFamily:'Abril Fatface',paddingTop:'50px',paddingBottom:'10px'}}>Signup.</h4>
                         <form >
-                        <div class="input-field col s12">
+                        <div className="input-field col s12">
                             <input className="auth-input" id="username" type="text" />
-                            <label for="username">Username</label>
+                            <label htmlFor="username">Username</label>
                         </div>
-                        <div class="input-field col s12">
-                            <input className="auth-input" id="email" type="email" class="validate"/>
-                            <label for="email">Email</label>
+                        <div className="input-field col s12">
+                            <input className="auth-input validate" id="email" type="email"/>
+                            <label htmlFor="email">Email</label>
                         </div>  
-                          <div class="input-field col s12">
-                            <input className="auth-input" id="password" type="password" class="validate"/>
-                            <label for="password">Password</label>
+                          <div className="input-field col s12">
+                            <input className="auth-input validate" id="password" type="password" />
+                            <label htmlFor="password">Password</label>
                           </div>
                           <button style={{marginBottom:'20px'}}type="submit" className="black btn waves-effect waves-light">Signup</button>
                             
                         </form>
-                        <span className="signup-text">Not new? Signin</span>
+                        <Link to="/signin"><span className="signup-text black-text">Not new? Signin</span></Link>
                     </div>
                     
                     </div>   
@@ -41,4 +44,10 @@ export class Signup extends Component {
     }
 }
 
-export default Signup
+const mapStatetoProps=(state)=>{
+    return{
+        auth:state.firebase.auth
+    }
+}
+
+export default connect(mapStatetoProps)(Signup)

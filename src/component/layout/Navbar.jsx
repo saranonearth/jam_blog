@@ -1,8 +1,9 @@
 import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
-
-const Navbar = () => {
+import {connect} from 'react-redux'
+const Navbar = (props) => {
     const username = 'saran';
+    console.log(props);
     return (
         <div>
                <nav   className="nav-extended white">
@@ -12,10 +13,17 @@ const Navbar = () => {
                 style={{fontSize: '5em', fontFamily: 'Abril Fatface', marginTop:'20px'}} 
                 className="brand-logo center jam-heading black-text flow-text">Just Another Magazine</NavLink>
                 <ul className="right">
-                    <li>
-                    <Link to={`profile/${username}`}  className="thumb-link"><i className="material-icons grey-text ">account_circle</i></Link>
+                    {(props.auth.uid)? (
+                    <li >
+                    <Link style={{paddingLeft:'0px'}} to={`profile/${username}`}  className="thumb-link"><i className="material-icons grey-text ">account_circle</i></Link>
                     </li>
-            
+                    ):(
+                    <li >
+                    <Link style={{paddingLeft:'0px'}} to="/signin"  className="thumb-link"><i className="material-icons grey-text ">account_circle</i></Link>
+                    </li>
+                    ) }
+                    
+                  
                 </ul>
                 </div>
                 <div className="nav-content">
@@ -25,9 +33,15 @@ const Navbar = () => {
                 </div>
                 </div>
                 </nav>
-              
+                
         </div>
     )
 }
 
-export default Navbar
+const mapStatetoProps=(state)=>{
+    return{
+        auth: state.firebase.auth
+    }
+}
+
+export default connect(mapStatetoProps)(Navbar)

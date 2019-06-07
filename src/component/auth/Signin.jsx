@@ -1,7 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
+import {signIn} from '../../actions/authAction';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
 
 export class Signin extends Component {
+    state={
+        email:'',
+        password:''
+    }
+
+    changeHandle=(e)=>{
+        this.setState({
+            [e.target.id] : e.target.value
+        })
+    }
+
+    submitHandle=(e)=>{
+        e.preventDefault();
+        this.props.signin(this.state);
+    }
+
+
     render() {
+        if(this.props.auth.uid) return <Redirect to='/profile/saran'/>
         return (
             <div>
             <div className="container cred-card" style={{width:'50%',position:'absolute',left:'25%'}}>
@@ -10,19 +32,25 @@ export class Signin extends Component {
                     <div className="container ">
                     <div className="cred-card-align">
                     <h4 style={{fontFamily:'Abril Fatface',paddingTop:'50px',paddingBottom:'10px'}}>Signin.</h4>
-                        <form >
-                        <div class="input-field col s12">
-                            <input className="auth-input" id="email" type="email" class="validate"/>
-                            <label for="email">Email</label>
+                        <form onSubmit={this.submitHandle}>
+
+                        {(this.props.authError)? <p className="red-text">{this.props.authError.code}</p>:null}
+                        <div className="input-field col s12">
+                            <input onChange={this.changeHandle} className="auth-input validate" id="email" type="email" />
+                            <label htmlFor="email">Email</label>
                         </div>  
-                          <div class="input-field col s12">
-                            <input className="auth-input" id="password" type="password" class="validate"/>
-                            <label for="password">Password</label>
+
+
+                          <div className="input-field col s12">
+                            <input onChange={this.changeHandle} className="auth-input validate" id="password" type="password" />
+                            <label htmlFor="password">Password</label>
                           </div>
+
+
                           <button style={{marginBottom:'20px'}}type="submit" className="black btn waves-effect waves-light">Signin</button>
                             
                         </form>
-                        <span className="signup-text">New? Signup</span>
+                       <Link to="/signup"><span className=" black-text signup-text">New? Signup</span></Link> 
                     </div>
                     
                     </div>   
@@ -37,4 +65,17 @@ export class Signin extends Component {
     }
 }
 
-export default Signin
+const mapStatetoProps=(state)=>{
+    return{
+        authError: state.auth.authError,
+        auth: state.firebase.auth
+    }
+}
+
+const mapDispatchtoProps=(dispatch)=>{
+    return{
+        signin: (cred)=>{dispatch(signIn(cred))}
+    }
+}
+
+export default connect(mapStatetoProps,mapDispatchtoProps)(Signin)
