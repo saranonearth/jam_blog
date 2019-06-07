@@ -1,9 +1,10 @@
 
 
 
-const blogReducer=(state,action)=>{
+const blogReducer=(state={},action)=>{
         return state
 }
+
 
 
 export default blogReducer;
