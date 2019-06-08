@@ -29,3 +29,27 @@ export const logOut =(uid)=>{
         })
     }
 }
+
+export const signUp =(creds)=>{
+    return (dispatch,getState,{getFirebase,getFirestore})=>{
+        const firebase= getFirebase();
+        const firestore = getFirestore();
+
+        firebase.auth().createUserWithEmailAndPassword(
+            creds.email,
+            creds.password
+        )
+        .then((res)=>{
+            return firestore.collection('users').doc(res.user.uid).set({
+                username: creds.username,
+                joinDate: new Date()
+            })
+        })
+        .then(()=>{
+            dispatch({type:'SIGNUP_SUCCESS'})
+        })
+        .catch((err)=>{
+            dispatch({type:'SIGNUP_ERROR',err})
+        })
+    }
+}

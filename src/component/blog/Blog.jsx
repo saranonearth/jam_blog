@@ -23,13 +23,15 @@ const Blog = () => {
             <div className="col s12 l5 blog-sidebar">
             <Jam/>
                 </div>
-             
+        
             </div>
         </div>
+
         </div>
             
    
     )
 }
+
 
 export default Blog

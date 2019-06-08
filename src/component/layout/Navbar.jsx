@@ -2,7 +2,6 @@ import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import {connect} from 'react-redux'
 const Navbar = (props) => {
-    const username = 'saran';
     console.log(props);
     return (
         <div>
@@ -15,7 +14,7 @@ const Navbar = (props) => {
                 <ul className="right">
                     {(props.auth.uid)? (
                     <li >
-                    <Link style={{paddingLeft:'0px'}} to={`profile/${username}`}  className="thumb-link"><i className="material-icons grey-text ">account_circle</i></Link>
+                    <Link style={{paddingLeft:'0px'}} to={`profile/${props.auth.uid}`}  className="thumb-link"><i className="material-icons grey-text ">account_circle</i></Link>
                     </li>
                     ):(
                     <li >
@@ -40,8 +39,10 @@ const Navbar = (props) => {
 
 const mapStatetoProps=(state)=>{
     return{
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
     }
 }
+
 
 export default connect(mapStatetoProps)(Navbar)

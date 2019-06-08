@@ -13,9 +13,7 @@ const Profile = (props) => {
     const url = props.match.url;
     if(!props.auth.uid) return <Redirect to="/" />
     return (
-        
-      
-           
+
             <BrowserRouter>
               <div>
             <ProfileNavbar url={url}/>
@@ -32,7 +30,8 @@ const Profile = (props) => {
 }
 const mapStatetoProps=(state)=>{
   return{
-      auth: state.firebase.auth
+      auth: state.firebase.auth,
+      profile: state.firebase.profile
   }
 }
 

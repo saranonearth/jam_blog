@@ -4,6 +4,7 @@ import {signIn} from '../../actions/authAction';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 
+
 export class Signin extends Component {
     state={
         email:'',
@@ -23,7 +24,7 @@ export class Signin extends Component {
 
 
     render() {
-        if(this.props.auth.uid) return <Redirect to='/profile/saran'/>
+        if(this.props.auth.uid) return <Redirect to={`profile/${this.props.auth.uid}`}/>
         return (
             <div>
             <div className="container cred-card" style={{width:'50%',position:'absolute',left:'25%'}}>
@@ -33,7 +34,7 @@ export class Signin extends Component {
                     <div className="cred-card-align">
                     <h4 style={{fontFamily:'Abril Fatface',paddingTop:'50px',paddingBottom:'10px'}}>Signin.</h4>
                         <form onSubmit={this.submitHandle}>
-
+                   
                         {(this.props.authError)? <p className="red-text">{this.props.authError.code}</p>:null}
                         <div className="input-field col s12">
                             <input onChange={this.changeHandle} className="auth-input validate" id="email" type="email" />
@@ -68,7 +69,8 @@ export class Signin extends Component {
 const mapStatetoProps=(state)=>{
     return{
         authError: state.auth.authError,
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        profile: state.firebase.profile
     }
 }
 
