@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {logOut} from '../../actions/authAction';
 
 const ProfileNavbar = (props) => {
-        console.log(props.profile)
+       
     return (
         <div>
             <nav>

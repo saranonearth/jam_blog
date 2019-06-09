@@ -9,6 +9,7 @@ import Signin from './component/auth/Signin';
 import Signup from './component/auth/Signup';
 import newProfile from './component/blog/newProfile';
 
+
 function App() {
   return (
     <BrowserRouter>

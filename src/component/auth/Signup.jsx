@@ -34,7 +34,7 @@ export class Signup extends Component {
                         <form onSubmit={this.handleSubmit} >
                         <div className="input-field col s12">
                             <input onChange={this.handleChange} className="auth-input" id="username" type="text" />
-                            <label htmlFor="username">Username</label>
+                            <label htmlFor="username">Name</label>
                         </div>
                         <div className="input-field col s12">
                             <input onChange={this.handleChange} className="auth-input validate" id="email" type="email"/>

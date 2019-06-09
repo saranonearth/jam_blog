@@ -42,7 +42,8 @@ export const signUp =(creds)=>{
         .then((res)=>{
             return firestore.collection('users').doc(res.user.uid).set({
                 username: creds.username,
-                joinDate: new Date()
+                joinDate: new Date(),
+                firstTime: null
             })
         })
         .then(()=>{

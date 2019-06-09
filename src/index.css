@@ -100,6 +100,16 @@ i:hover {
     font-size: 14px;
     text-transform: none;
 }
+.loader {
+    margin-top: 100px;
+    postiion: absolute !important;
+    bottom: 60% !important ;
+    left: 50%  !important;
+    transform: translate(-50%,-50%)  !important;
+}
+.edit-btn {
+    font-size: 1.7em !important;
+}
 @media (max-width:800px){
     .jam-heading{
         width: 67% !important;

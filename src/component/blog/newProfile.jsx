@@ -15,6 +15,9 @@ export class newProfile extends Component {
         })
         }
 
+
+        
+
         handleClick=(event)=>{
          const spaceRef = firebase.storage().ref().child('profileImg/SDLEDDC5514552');
          spaceRef.getDownloadURL().then(url=>{

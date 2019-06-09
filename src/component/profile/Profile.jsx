@@ -7,9 +7,9 @@ import About from './About';
 import Err from '../layout/Error';
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom';
-
+import EditProfile from './EditProfile';
 const Profile = (props) => {
-    console.log(props);
+    
     const url = props.match.url;
     if(!props.auth.uid) return <Redirect to="/" />
     return (
@@ -18,9 +18,10 @@ const Profile = (props) => {
               <div>
             <ProfileNavbar url={url}/>
             <Switch>
-            <Route exact path="/profile/:username" component={About} />
+            <Route exact path="/profile/:id" component={About} />
             <Route path={`${url}/articles`} component={Articles} />
             <Route path={`${url}/newarticle`} component={NewArticle} />
+            <Route path={`${url}/editprofile`} component={EditProfile} />
             <Route component={Err}/>
             </Switch>
             </div>
