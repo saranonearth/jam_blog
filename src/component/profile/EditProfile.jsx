@@ -66,7 +66,7 @@ export class EditProfile extends Component {
                         <div className="input-field col s12" style={{marginTop:'0'}}>
 
 
-                        <h4 style={{paddingTop:'10px',marginBottom:'0',marginTop:'0px',fontSize:'15px'}}>Article content</h4>
+                        <h4 style={{paddingTop:'10px',marginBottom:'0',marginTop:'0px',fontSize:'15px'}}>Bio</h4>
                         <textarea value={this.state.bio} id="bio" onChange={this.handleBio}  className="materialize-textarea grey-text" required></textarea>
                         </div> 
                         

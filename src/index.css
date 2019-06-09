@@ -77,7 +77,7 @@ i:hover {
     height:150px;
 }
 .header-img{
-    background: url("https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg");
+    background: url("https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2Fimage.jpg?alt=media&token=f6693a18-9efa-475c-896f-c88704e0fb1c");
     background-repeat: no-repeat;
     background-position: center;
     height: 60vh;

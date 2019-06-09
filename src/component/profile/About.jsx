@@ -29,7 +29,7 @@ state={
                     <div className="container">
                   
                     <img  className="profile-image" src={this.props.profile.profileImage} alt="profile-img"/>
-                        <div className="card-title">{this.props.profile.username}</div>
+                        <div className="card-title" style={{fontSize:'22px'}}>{this.props.profile.username}</div>
                         <p style={{width:'50%$'}}>{this.props.profile.bio}</p>
                         <Link to={`${this.props.match.url}/editprofile`}><button  className="btn center black">Edit Profile</button></Link>
                     </div>     
