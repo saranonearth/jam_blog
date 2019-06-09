@@ -51,6 +51,7 @@ export class Signin extends Component {
                           <button style={{marginBottom:'20px'}}type="submit" className="black btn waves-effect waves-light">Signin</button>
                             
                         </form>
+                        
                        <Link to="/signup"><span className=" black-text signup-text">New? Signup</span></Link> 
                     </div>
                     

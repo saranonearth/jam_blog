@@ -3,6 +3,8 @@ import {Link,Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {signUp} from '../../actions/authAction';
 
+
+
 export class Signup extends Component {
     state={
         username:'',
@@ -19,8 +21,9 @@ export class Signup extends Component {
         event.preventDefault();
         this.props.signup(this.state);
     }
-
+    
     render() {
+        console.log(this.props.googleAuth)
         if(this.props.auth.uid) return <Redirect to={`profile/${this.props.auth.uid}`}/>
         return (
             <div>
@@ -47,6 +50,7 @@ export class Signup extends Component {
                           <button style={{marginBottom:'20px'}}type="submit" className="black btn waves-effect waves-light">Signup</button>
                             
                         </form>
+                   
                         <Link to="/signin"><span className="signup-text black-text">Not new? Signin</span></Link>
                     </div>
                     

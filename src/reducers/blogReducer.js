@@ -1,14 +1,22 @@
 
+const initState = {
+        articleError: null
+}
 
-
-const blogReducer=(state={},action)=>{
+const blogReducer=(state=initState,action)=>{
         switch(action.type){
                 case 'ARTICLEPOST_SUCCESS':
                         console.log('posted')
-                        return state
+                        return {
+                                ...state,
+                                articleError: 'Article Published'
+                        }
                 case 'ARTICLEPOST_ERROR':
                         console.log(action.err)
-                        return state
+                        return {
+                                ...state,
+                                articleError: action.err.code
+                        }
                 case 'ARTICLE_DELETE_SUCCESS':
                         console.log("article deleted")
                         return state

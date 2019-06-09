@@ -117,6 +117,14 @@ i:hover {
 .edit-btn {
     font-size: 1.7em !important;
 }
+.nav-image{
+    width: 35px;
+    height:35px;
+    border-radius: 100%;
+}
+.edit-profile-card {
+    height:61vh;
+}
 
 @media (max-width:800px){
     .jam-heading{
@@ -213,6 +221,21 @@ i:hover {
     }
     .auth-input {
         width: 80% !important;
+    }
+    .change-btn{
+        position: absolute;
+        top:-100%;
+        left: -100%;
+        padding:-20px 5px;
+        padding-bottom: 2px;
+        
+    }
+    .change-btn-font{
+        font-size:12px !important;
+        
+    }
+    .edit-profile-card{
+        height: 65vh;
     }
 
 }

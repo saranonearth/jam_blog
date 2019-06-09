@@ -13,22 +13,25 @@ state={
 
     console.log(this.props);
 
+
     if(!this.state.allow){
     if(!this.props.profile.firstTime) return <Redirect to={`${this.props.match.url}/editprofile`} />}
 
     return (
         <div>
+         
             <div className="container" >
-                <div className="card yo-card about-card center" style={{marginTop:'30px',marginRight:'-20px',marginLeft:'0'}}>
+           
+                <div className="card yo-card about-card center" style={{marginTop:'10px',marginRight:'-20px',marginLeft:'0'}}>
                
                     <div className="card-contents">
                     
                     <div className="container">
-                    <Link to={`${this.props.match.url}/editprofile`}><button  className="btn btn-floating right black">Edit Profile</button></Link>
+                  
                     <img  className="profile-image" src={this.props.profile.profileImage} alt="profile-img"/>
                         <div className="card-title">{this.props.profile.username}</div>
                         <p style={{width:'50%$'}}>{this.props.profile.bio}</p>
-                       
+                        <Link to={`${this.props.match.url}/editprofile`}><button  className="btn center black">Edit Profile</button></Link>
                     </div>     
                     </div>
                 </div>

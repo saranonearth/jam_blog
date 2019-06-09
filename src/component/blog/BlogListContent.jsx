@@ -1,6 +1,7 @@
 import React from 'react';
 
 const BlogListContent = ({article}) => {
+
     return (
         <div>
  
@@ -17,9 +18,6 @@ const BlogListContent = ({article}) => {
           <p style={{margin:'0px',fontSize:'11px'}} >May 27</p>
           <p style={{margin:'0px',fontSize:'12px'}} >posted by {article.author}</p>
         </div>
-      </div>
-      <div className="card-image">
-        <img className="blog-img" src="https://lorempixel.com/80/80/nature/6" alt="blogimg"/>
       </div>
     </div>
   </div>  

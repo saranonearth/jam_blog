@@ -43,7 +43,9 @@ export const signUp =(creds)=>{
             return firestore.collection('users').doc(res.user.uid).set({
                 username: creds.username,
                 joinDate: new Date(),
-                firstTime: null
+                firstTime: null,
+                profileImage: 'https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2FDummyimage.png?alt=media&token=cef8d99d-01ee-4a45-ac9b-884ec6afbf01',
+                articleCount:0
             })
         })
         .then(()=>{
@@ -54,3 +56,5 @@ export const signUp =(creds)=>{
         })
     }
 }
+
+

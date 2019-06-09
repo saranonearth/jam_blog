@@ -10,7 +10,7 @@ export class newArticle extends Component {
         author:''
       
     }
-
+  
     handleChange=(event)=>{
         const username = this.props.profile.username;
         this.setState({
@@ -29,14 +29,20 @@ export class newArticle extends Component {
             content:'',
             author: ''
         })
-    }
-
+       
+            this.props.history.push(`/profile/${this.props.auth.uid}/articles`)
+     
+    }   
+     
     render() {
+      
         console.log('new article ',this.props.profile.username);
         return (
             <div>
                  <div>   
            <div className="container" >
+
+           
                 <div className="card newarticle-card" style={{marginTop:'30px'}}>
                     <div className="card-contents">
                     
@@ -74,7 +80,9 @@ export class newArticle extends Component {
 }
 const mapStatetoProps=(state)=>{
     return {
-        profile: state.firebase.profile
+        profile: state.firebase.profile,
+        articleError: state.blog.articleError,
+        auth : state.firebase.auth
     }
 }
 const mapDispatchtoProps=(dispatch)=>{

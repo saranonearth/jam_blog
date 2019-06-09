@@ -5,9 +5,9 @@ import {editProfile} from '../../actions/profileAction';
 
 export class EditProfile extends Component {
     state={
-        bio:'',
+        bio:this.props.profile.bio,
         file:{},
-        img:'https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2FJd4YTgJoAidgCUfz5ht2Eun5TyK2?alt=media&token=8d5d7f8d-915d-432a-bbf7-db77d66b6f8d'
+        img:'https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2FDummyimage.png?alt=media&token=cef8d99d-01ee-4a45-ac9b-884ec6afbf01'
     }
 
     componentDidMount(){
@@ -26,6 +26,7 @@ export class EditProfile extends Component {
             bio:'',
             file:{}
         })
+        this.props.history.push(`/profile/${this.props.auth.uid}`)
     }
     handleBio=(event)=>{
         this.setState({
@@ -39,24 +40,24 @@ export class EditProfile extends Component {
             <div>
                 <div>
             <div className="container" >
-                <div className="card yo-card about-card center" style={{marginTop:'30px'}}>
+                <div className="card yo-card about-card center edit-profile-card" style={{marginTop:'30px'}}>
                     <div className="card-contents">
                     
                     <div className="container">
                     <form onSubmit={this.handleSubmit}>
                     <img  className="profile-image" src={this.state.img} alt="edit-img"/>
 
-                        <div className="center container">
-                        <div style={{position:'absolute',top:'50%',left:'50%'}} className=" center file-field input-field">
-                            <div className="btn">
-                                <span>File</span>
-                                <input type="file" onChange={this.handleFileUpload}/>
+          
+                        <div style={{position:'absolute',top:'40%',left:'50%'}} className=" center file-field input-field">
+                            <div className="btn black logout-btn change-btn">
+                                <span className="change-btn-font">Edit</span>
+                                <input type="file"  onChange={this.handleFileUpload}/>
                             </div>
                             <div className="file-path-wrapper">
                                 <input style={{width:'0'}} className="file-path validate" type="text"/>
                             </div>
                             </div>
-                        </div>
+                 
                            
   
   
@@ -65,8 +66,8 @@ export class EditProfile extends Component {
                         <div className="input-field col s12" style={{marginTop:'0'}}>
 
 
-                        <h4 style={{paddingTop:'30px',marginBottom:'0',fontSize:'15px'}}>Article content</h4>
-                        <textarea value={this.state.bio} id="bio" onChange={this.handleBio} style={{height:'80px'}}  className="materialize-textarea grey-text" required></textarea>
+                        <h4 style={{paddingTop:'10px',marginBottom:'0',marginTop:'0px',fontSize:'15px'}}>Article content</h4>
+                        <textarea value={this.state.bio} id="bio" onChange={this.handleBio}  className="materialize-textarea grey-text" required></textarea>
                         </div> 
                         
                         
@@ -84,7 +85,8 @@ export class EditProfile extends Component {
 
 const mapStatetoProps = (state) =>{
     return {
-        profile: state.firebase.profile
+        profile: state.firebase.profile,
+        auth: state.firebase.auth
     }
 }
 const mapDispatchtoProps=(dispatch)=>{
