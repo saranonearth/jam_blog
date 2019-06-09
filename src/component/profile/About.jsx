@@ -3,22 +3,32 @@ import {connect} from 'react-redux';
 import {Link,Redirect} from 'react-router-dom';
 class About extends React.Component  {
 
+state={
+    allow: 'no'
+}
+    componentDidMount(){
+        setTimeout(()=> this.setState({allow:''}),3000)
+    }
     render(){
-    const profileImg = "http://placehold.jp/200x200.png";
+
     console.log(this.props);
-    if(!this.props.profile.firstTime) return <Redirect to={`${this.props.match.url}/editprofile`} />
+
+    if(!this.state.allow){
+    if(!this.props.profile.firstTime) return <Redirect to={`${this.props.match.url}/editprofile`} />}
+
     return (
         <div>
             <div className="container" >
-                <div className="card yo-card about-card center" style={{marginTop:'30px'}}>
+                <div className="card yo-card about-card center" style={{marginTop:'30px',marginRight:'-20px',marginLeft:'0'}}>
+               
                     <div className="card-contents">
                     
                     <div className="container">
-                    
-                    <img  className="profile-image" src={profileImg} alt="profile-img"/>
+                    <Link to={`${this.props.match.url}/editprofile`}><button  className="btn btn-floating right black">Edit Profile</button></Link>
+                    <img  className="profile-image" src={this.props.profile.profileImage} alt="profile-img"/>
                         <div className="card-title">{this.props.profile.username}</div>
-                        <p style={{width:'50%$'}}>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum odit, illo aliquam facere a sapiente, laborum adipisci amet atque nisi dignissimos? Optio, magnam possimus ipsam beatae dolores culpa consequuntur totam.</p>
-                        <Link to={`${this.props.match.url}/editprofile`}><button style={{margin:'20px 20px'}} className="btn black">Edit Profile</button></Link>
+                        <p style={{width:'50%$'}}>{this.props.profile.bio}</p>
+                       
                     </div>     
                     </div>
                 </div>

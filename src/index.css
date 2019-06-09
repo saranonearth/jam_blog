@@ -47,6 +47,13 @@ i:hover {
     height:200px;
     
 }
+.edit-image{
+    margin: 20px;
+    border-radius: 100%;
+    width:100px;
+    height:100px;
+    
+}
 .signup-text{
     font-weight: 600;
 }
@@ -110,6 +117,7 @@ i:hover {
 .edit-btn {
     font-size: 1.7em !important;
 }
+
 @media (max-width:800px){
     .jam-heading{
         width: 67% !important;
@@ -190,8 +198,8 @@ i:hover {
         text-overflow: ellipsis;
     }
     .blog-img{
-        width: 110px !important;
-        height: 110px;
+        width: 105px !important;
+        height: 105px;
     }
     .header-img{
         height:30vh;
