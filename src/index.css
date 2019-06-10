@@ -77,7 +77,7 @@ i:hover {
     height:150px;
 }
 .header-img{
-    background: url("https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2Fimage.jpg?alt=media&token=f6693a18-9efa-475c-896f-c88704e0fb1c");
+    background: url("https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2Fimage.jpg?alt=media&token=849e3b76-6761-4228-a072-8bc4ee6020b8");
     background-repeat: no-repeat;
     background-position: center;
     height: 60vh;
@@ -125,7 +125,9 @@ i:hover {
 .edit-profile-card {
     height:61vh;
 }
-
+.article-card {
+    height: auto !important;
+}
 @media (max-width:800px){
     .jam-heading{
         width: 67% !important;

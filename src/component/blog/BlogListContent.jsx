@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const BlogListContent = ({article}) => {
 
@@ -11,7 +12,7 @@ const BlogListContent = ({article}) => {
       <div className="card-stacked">
         
         <div className="card-content" style={{padding:'6px 6px 6px 12px'}}>
-        <p style={{fontWeight:'700',fontSize:'22px'}}>{article.title}</p>
+        <Link className="black-text" to={`/article/${article.id}`}><p style={{fontWeight:'700',fontSize:'22px'}}>{article.title}</p></Link>
           <p className="block-text grey-text">{article.description}</p>
         </div>
         <div className="card-action" style={{padding:'8px 16px'}}>

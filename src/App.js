@@ -7,7 +7,7 @@ import Contributors from './component/layout/Contributors';
 import Profile from './component/profile/Profile';
 import Signin from './component/auth/Signin';
 import Signup from './component/auth/Signup';
-import newProfile from './component/blog/newProfile';
+import ArticleMain from './component/profile/ArticleMain';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/profile/:uid" component={Profile} />
         <Route path="/signin" component={Signin} />
         <Route path="/signup" component={Signup} />
-        <Route path="/np" component={newProfile} />
+        <Route path="/article/:articleId" component={ArticleMain} />
         <Route component={Err}/>
         </Switch>
     </div>

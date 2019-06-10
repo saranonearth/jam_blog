@@ -1,8 +1,7 @@
 import React from 'react'
 
 const ContributorCard = ({user}) => {
-    console.log(user)
-    
+   
     return (
         <div className="center">
             <div className="card z-depth-0">

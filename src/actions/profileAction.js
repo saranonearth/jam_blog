@@ -6,12 +6,10 @@ export const editProfile =(details)=>{
         const firestore = getFirestore();
         const firebase = getFirebase();
 
+            const spaceRef = firebase.storage().ref();
         
-     
-        const spaceRef = firebase.storage().ref().child(`profileImg/${uid}`);
-
-        spaceRef.put(details.file).then(snapshot=>{
-            console.log(snapshot,'IMG_SUCCESS')                    //To upload image
+            spaceRef.child(`profileImg/${uid}`).put(details.file).then(snapshot=>{
+            console.log('image uploaded')
         })
         .then(()=>{
             const spaceRef = firebase.storage().ref().child(`profileImg/${uid}`);   //to get image url

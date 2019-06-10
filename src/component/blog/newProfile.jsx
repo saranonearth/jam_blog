@@ -6,7 +6,6 @@ export class newProfile extends Component {
     handleChange=(event)=>{
         const uid = 'SDLEDDC5514552';
         const file = event.target.files[0];
-        console.log(file);
         const storageRef = firebase.storage().ref();
         const spaceRef = storageRef.child(`profileImg/${uid}`);
 

@@ -1,5 +1,4 @@
 
-
 export const NewArticle=(newarticle)=>{
     return (dispatch,getState,{getFirebase,getFirestore})=>{
         const firestore = getFirestore();
@@ -7,7 +6,10 @@ export const NewArticle=(newarticle)=>{
         console.log(firebase.auth().currentUser.profile)
         const uid = firebase.auth().currentUser.uid;
         const count = getState().firebase.profile.articleCount;
-            console.log('action',newarticle);
+          
+            
+       
+        
         firestore.collection('articles').doc().set({
 
             authorId: uid,
@@ -15,9 +17,11 @@ export const NewArticle=(newarticle)=>{
             description: newarticle.description,
             content: newarticle.content,
             postedDate: new Date(),
-            author: newarticle.author
+            author: newarticle.author,
+            header:''
         })
-        .then(()=>{
+        .then((res)=>{
+            console.log(res);
             return firestore.collection('users').doc(uid).update(
                 {articleCount: count+1}
             )

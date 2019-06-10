@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import {connect} from 'react-redux'
 const Navbar = (props) => {
-    console.log(props)
+  
     return (
         <div>
                <nav   className="nav-extended white">

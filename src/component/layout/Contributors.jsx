@@ -17,7 +17,7 @@ const Contributors = (props) => {
         </div>
       </div>
         
-        console.log(props.users)    
+     
 
         const filteredContributors = props.users.filter(user=>{
             return user.articleCount >= 2

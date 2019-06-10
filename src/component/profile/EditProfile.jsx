@@ -7,7 +7,7 @@ export class EditProfile extends Component {
     state={
         bio:this.props.profile.bio,
         file:{},
-        img:'https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2FDummyimage.png?alt=media&token=cef8d99d-01ee-4a45-ac9b-884ec6afbf01'
+        img:'https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2Fimage%20(2).jpg?alt=media&token=905f0caf-cf5f-4a2a-88a5-70b7086991bd'
     }
 
     componentDidMount(){
@@ -35,7 +35,7 @@ export class EditProfile extends Component {
 
     }
     render() {
-        console.log(this.props)
+        
         return (
             <div>
                 <div>

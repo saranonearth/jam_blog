@@ -44,9 +44,18 @@ export const signUp =(creds)=>{
                 username: creds.username,
                 joinDate: new Date(),
                 firstTime: null,
-                profileImage: 'https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2FDummyimage.png?alt=media&token=cef8d99d-01ee-4a45-ac9b-884ec6afbf01',
+                profileImage: 'https://firebasestorage.googleapis.com/v0/b/react-firebase-a3124.appspot.com/o/profileImg%2Fimage%20(2).jpg?alt=media&token=905f0caf-cf5f-4a2a-88a5-70b7086991bd',
                 articleCount:0
             })
+        }).then(()=>{
+            firebase.auth().currentUser.sendEmailVerification(
+            {url: 'http://localhost:3000/'}
+        ).then(()=>{
+            console.log('email link sent')
+        })
+        .catch(err=>{
+            console.log('email link error')
+        })
         })
         .then(()=>{
             dispatch({type:'SIGNUP_SUCCESS'})
@@ -58,3 +67,18 @@ export const signUp =(creds)=>{
 }
 
 
+export const verifyEmail=()=>{
+    return (dispatch,getState,{getFirebase})=>{
+        const firebase = getFirebase();
+
+        
+        firebase.auth().currentUser.sendEmailVerification(
+            {url: 'http://localhost:3000/'}
+        ).then(()=>{
+            console.log('working')
+        }).catch(()=>{
+            console.log('nope')
+        })
+
+    }   
+}

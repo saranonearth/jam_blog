@@ -11,8 +11,10 @@ import EditProfile from './EditProfile';
 const Profile = (props) => {
     
     const url = props.match.url;
-    if(!props.auth.uid) return <Redirect to="/" />
-    return (
+    
+
+      if(!props.auth.uid) return <Redirect to="/" />
+      return (
 
             <BrowserRouter>
               <div>
@@ -26,9 +28,9 @@ const Profile = (props) => {
             </Switch>
             </div>
             </BrowserRouter>
-        
-    )
-}
+      )
+    }
+  
 const mapStatetoProps=(state)=>{
   return{
       auth: state.firebase.auth,

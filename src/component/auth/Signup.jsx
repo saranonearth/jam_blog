@@ -23,7 +23,7 @@ export class Signup extends Component {
     }
     
     render() {
-        console.log(this.props.googleAuth)
+     
         if(this.props.auth.uid) return <Redirect to={`profile/${this.props.auth.uid}`}/>
         return (
             <div>
